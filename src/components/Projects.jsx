@@ -12,7 +12,7 @@ import projectThreeImage from '../assets/Singularity.png';
 const projectData = [
   { 
     id: 1, 
-    title: "Project Cygnus", 
+    title: "Haven.AI", 
     image: projectOneImage,
     description: "Haven.AI is a full-stack, AI-powered emotional companion designed to create a secure and private space for meaningful conversations. It leverages custom prompt engineering to ensure empathetic, non-judgmental interactions while prioritizing user privacy and safety. The platform offers a genuinely caring and supportive experience through active listening and positive reinforcement.",
     technologies: ['React', 'Firebase', 'Google Gemini API'],
