@@ -1,24 +1,17 @@
 import { useState } from 'react';
 import './Hero.css';
-import profileImage from '../assets/profile.png' ; 
+// The imports are the same, we just change where they are used
+import profileImage from '../assets/profile.png'; 
+import ghibliImage from '../assets/profile1.jpg';
 
 const Hero = ({ onMouseEnter, onMouseLeave }) => {
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  // State for the hover text and the flip
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const { width, height, left, top } = card.getBoundingClientRect();
-    const x = e.clientX - left;
-    const y = e.clientY - top;
-
-    const rotateX = -((height / 2 - y) / (height / 2)) * 8; // Max rotation 8 degrees
-    const rotateY = ((width / 2 - x) / (width / 2)) * 8; // Max rotation 8 degrees
-    
-    setRotate({ x: rotateX, y: rotateY });
-  };
-
-  const handleMouseLeave = () => {
-    setRotate({ x: 0, y: 0 });
+  // Click handler to toggle the flip
+  const handleCardClick = () => {
+    setIsFlipped(!isFlipped);
   };
 
   return (
@@ -27,17 +20,29 @@ const Hero = ({ onMouseEnter, onMouseLeave }) => {
       <div className="container hero-container">
         <div className="hero-content" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
           <h1>VUMMADISINGH KALYAN</h1>
-          <p>Full-Stack Developer & Data Analyst</p>
+          <p>Aspiring Full-Stack Engineer & Data Analyst</p>
         </div>
+        
         <div 
           className="hero-photo-container"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          style={{
-            transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
-          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <img src={profileImage} alt="Vummadisingh Kalyan" className="hero-photo" />
+          <div className={`card ${isFlipped ? 'is-flipped' : ''}`} onClick={handleCardClick}>
+            {/* --- THIS IS THE ONLY PART THAT CHANGED --- */}
+            <div className="card-face card-front">
+              {/* The FRONT of the card is now your main profile picture */}
+              <img src={profileImage} alt="Vummadisingh Kalyan" className="hero-photo" />
+            </div>
+            <div className="card-face card-back">
+              {/* The BACK of the card is now the Ghibli art */}
+              <img src={ghibliImage} alt="Ghibli-style artwork" className="hero-photo" />
+            </div>
+            {/* --- END OF CHANGE --- */}
+          </div>
+          <div className={`tap-me-text ${isHovered && !isFlipped ? 'is-visible' : ''}`}>
+            Tap Me
+          </div>
         </div>
       </div>
       <div className="hero-logo">VK</div>
