@@ -14,7 +14,7 @@ const About = ({ onMouseEnter, onMouseLeave }) => {
         >
           <h2>The Manifesto.</h2>
           <p>
-            Digital craftsmanship is about applying diverse skills to solve real-world problems. With hands-on experience in full-stack development, I've built projects that combine powerful front-end interfaces with robust back-end logic. My foundational knowledge from completing data analysis and cybersecurity simulations, along with certifications in Power BI and React, allows me to approach every project with a comprehensive understanding of both technical and security considerations. Every line of code I write is a deliberate step toward creating applications that are not just functional but secure and scalable.
+           I see digital craftsmanship as the art of solving complex problems with precision, creativity, and unwavering focus — whether developing full-stack applications or turning raw data into actionable insights with Power BI and Tableau. Equipped with the skills, training, and certifications to execute independently, I approach every challenge with clarity and rigor, delivering solutions that are robust, secure, and scalable. I strategically leverage AI tools to accelerate learning, optimize solutions, and ensure accuracy — always as a complement to my expertise, never a substitute. Every project reflects my analytical reasoning, attention to detail, and relentless commitment to excellence. I immerse myself fully, overcome obstacles with persistence, and continuously refine my craft, creating work that is impactful, reliable, and built to last.
           </p>
         </div>
         <div 
@@ -23,9 +23,11 @@ const About = ({ onMouseEnter, onMouseLeave }) => {
         >
           <h3>Career Milestones</h3>
           <ul>
-            <li><span>2024-Present</span>  React Developer & Data Analysis</li>
-            <li><span>2024-2025</span> Full-Stack Developer Certification from 10000 Coders</li>
-            <li><span>2025-Present</span> Data Analyst Simulation from Deloitte & Cyber Security from Tata</li>
+            <li><span>2024 – 2025:</span> Full-Stack Developer Training</li>
+            <li><span>2025:</span> React Development Course</li>
+            <li><span>2025:</span> Power BI Certification</li>
+            <li><span>2025 – Present:</span> Data Analyst & Cybersecurity Simulations</li>
+
           </ul>
         </div>
       </div>
