@@ -1,0 +1,84 @@
+.skills h2 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.skills h2.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--secondary-bg);
+  border-radius: 8px;
+  padding: var(--space-md);
+  text-align: center;
+  overflow: hidden; /* Important for the gradient border */
+  
+  /* Animation setup */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skill-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The colorful gradient border effect */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px; 
+  padding: 2px; /* The thickness of the border */
+  background: var(--accent-gradient);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out; 
+  mask-composite: exclude; 
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+  /* The icon itself will have the gradient */
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradient-text 5s linear infinite reverse;
+}
+
+.skill-name {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--primary-text);
+  font-weight: 400;
+}

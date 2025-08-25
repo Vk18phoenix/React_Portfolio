@@ -1,0 +1,107 @@
+/* ROOT VARIABLES & GLOBAL RESETS */
+:root {
+  /* Colors */
+  --primary-bg: #0A0A0A; /* Fallback color */
+  --secondary-bg: #141414;
+  --primary-text: #E0E0E0;
+  --accent-color: #00F0FF;
+  --glass-bg: rgba(20, 20, 20, 0.6);
+
+  /* Chromatic Aberration Gradient */
+  --accent-gradient: linear-gradient(90deg, #F000FF, #00F0FF, #00FF80);
+
+  /* Typography */
+  --font-heading: 'Roslindale', 'Georgia', serif;
+  --font-body: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  --font-mono: 'Source Code Pro', 'Menlo', monospace;
+
+  /* Spacing (8px baseline grid) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 128px;
+  
+  /* Animation */
+  --transition-fast: 250ms cubic-bezier(0.215, 0.610, 0.355, 1);
+  --transition-slow: 400ms cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Code+Pro:wght@400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  color: var(--primary-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  /* NEW: Impressive Deep Space Gradient Background */
+  background-color: var(--primary-bg); /* Fallback */
+  background-image: radial-gradient(ellipse at center, #1B2735 0%, #090A0F 100%);
+  background-attachment: fixed; /* Ensures the gradient stays in place on scroll */
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+h1 { font-size: clamp(3rem, 10vw, 8rem); }
+h2 { font-size: clamp(2rem, 6vw, 3rem); }
+h3 { font-size: 1.75rem; }
+
+/* Gradient text for headings */
+h2 {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradient-text 5s linear infinite;
+}
+
+@keyframes gradient-text {
+  to {
+    background-position: 200% center;
+  }
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: var(--accent-gradient);
+    transform-origin: bottom right;
+    transition: transform var(--transition-slow);
+}
+
+a:hover { color: #ffffff; }
+a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+section { padding: var(--space-xl) 0; }
+
+.cursor { position: fixed; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 9999; transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease; will-change: width, height, transform; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #090A0F; } /* Match new background */
+::-webkit-scrollbar-thumb { background: var(--secondary-bg); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }

@@ -1,0 +1,53 @@
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    /* Applying the Golden Ratio */
+    grid-template-columns: 1.618fr 1fr;
+  }
+}
+
+.about-manifesto p {
+  font-size: 1.125rem;
+  max-width: 65ch;
+  margin-top: var(--space-sm);
+}
+
+.about-timeline ul {
+  list-style: none;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--secondary-bg);
+}
+
+.about-timeline li {
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-mono);
+}
+
+.about-timeline li span {
+  color: var(--accent-color);
+  margin-right: var(--space-sm);
+  display: inline-block;
+  width: 100px; /* Aligns the text */
+}
+
+/* Scroll Fade-in Animation */
+.about-manifesto, .about-timeline {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-manifesto.is-visible, .about-timeline.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-timeline.is-visible {
+  transition-delay: 200ms;
+}

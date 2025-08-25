@@ -1,0 +1,66 @@
+.certifications {
+    background-color: var(--primary-bg);
+}
+
+.certifications h2 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.certifications h2.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.certs-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 8px;
+    padding: var(--space-sm) var(--space-md);
+    transition: background-color var(--transition-slow);
+
+    /* Animation setup */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.cert-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.3s ease;
+}
+
+
+.cert-card:hover {
+    background-color: var(--secondary-bg);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.cert-details h3 {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.cert-details p {
+    font-family: var(--font-mono);
+    opacity: 0.8;
+}

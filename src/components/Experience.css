@@ -1,0 +1,153 @@
+.experience {
+    background-color: var(--primary-bg); /* Match the dark theme */
+}
+
+.experience h2 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.experience h2.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-md) 0;
+}
+
+/* The vertical timeline line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 2px;
+    background: var(--secondary-bg);
+}
+
+@media (min-width: 768px) {
+    .timeline::before {
+        left: 50%;
+        margin-left: -1px;
+    }
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--space-lg);
+    padding-left: 55px; /* Space for the timeline dot */
+    
+    /* Animation setup */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timeline-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@media (min-width: 768px) {
+    .timeline-item {
+        padding-left: 0;
+        width: 50%;
+    }
+    /* Align odd items to the left */
+    .timeline-item:nth-child(odd) {
+        padding-right: calc(var(--space-lg) / 2 + 25px);
+        text-align: right;
+    }
+    /* Align even items to the right */
+    .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: calc(var(--space-lg) / 2 + 25px);
+    }
+}
+
+/* The timeline dot */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 14px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--secondary-bg);
+    border: 3px solid var(--accent-color);
+    z-index: 1;
+    transition: background-color var(--transition-slow);
+}
+
+.timeline-item:hover::before {
+    background-color: var(--accent-color);
+}
+
+
+@media (min-width: 768px) {
+    .timeline-item::before {
+        left: 50%;
+        margin-left: -10px;
+    }
+}
+
+.timeline-content {
+    background: var(--glass-bg);
+    border: 1px solid var(--secondary-bg);
+    border-radius: 8px;
+    padding: var(--space-md);
+}
+
+.timeline-content h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+    color: #fff;
+}
+
+.company-info {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-sm);
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+@media (min-width: 768px) {
+    /* Justify tags to the right for left-aligned items */
+    .timeline-item:nth-child(odd) .skills-tags {
+        justify-content: flex-end;
+    }
+}
+
+
+.skill-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+}

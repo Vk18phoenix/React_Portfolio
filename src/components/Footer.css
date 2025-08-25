@@ -1,0 +1,29 @@
+.footer {
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--secondary-bg);
+  background-color: var(--primary-bg);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}

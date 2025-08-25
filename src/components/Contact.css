@@ -1,0 +1,45 @@
+.contact {
+  padding-bottom: var(--space-xl);
+}
+
+.contact-container {
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.contact-content.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-content p {
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.contact-button {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 4px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.contact-button:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+}
+
+/* Remove default underline animation */
+.contact-button::after {
+  display: none;
+}
