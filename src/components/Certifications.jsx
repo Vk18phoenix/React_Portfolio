@@ -3,7 +3,8 @@ import useScrollFadeIn from '../hooks/useScrollFadeIn';
 import { HiBadgeCheck } from 'react-icons/hi';
 
 const certsData = [
-  { name: 'Certified React.js Developer', issuer: '10000 Coders', year: '2025' },
+  { name: 'Full-Stack Developer', issuer: '10000 Coders', year: '2025' },
+  { name: 'Frontend Technologies', issuer: 'FreeCodeCamp', year: '2025' },
   { name: 'Data Analyst Simulation', issuer: 'Deloitte', year: '2025' },
   { name: 'Power BI', issuer: 'Power BI Plus', year: '2025' },
 ];

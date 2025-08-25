@@ -1,6 +1,6 @@
 import './Skills.css';
 import useScrollFadeIn from '../hooks/useScrollFadeIn';
-import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaFigma, FaNodeJs, FaGitAlt, FaGithub, FaPython } from 'react-icons/fa';
+import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaFigma, FaNodeJs, FaGitAlt, FaGithub, FaPython, FaDatabase } from 'react-icons/fa';
 // This standard import now works because we are using a stable version.
 import { SiVite, SiTypescript, SiPowerbi, SiDjango, SiTableau, SiMongodb } from "react-icons/si";
 
@@ -17,6 +17,7 @@ const skillsData = [
   { name: 'Django', icon: <SiDjango /> },
   // Database
   { name: 'MongoDB', icon: <SiMongodb /> },
+  { name: 'SQL', icon: <FaDatabase /> },
   // Tools & DevOps
   { name: 'Git', icon: <FaGitAlt /> },
   { name: 'GitHub', icon: <FaGithub /> },
